@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col">
+    <span>Add Person</span>
+    <button class="btn btn-primary" type="button" (click)="addPerson()">+</button>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-12">
+    <div>
+      <form [formGroup]="peopleForm" (ngSubmit)="onSubmit()" class="form-group my-4">
+
+        <div formArrayName='people'>
+          <div *ngFor="let p of people.controls; let i=index">
+            <div [formGroupName]='i'>
+              <label for="name">Customer Name</label>
+              <input formControlName="name" class="form-control" type="text" id="name">
+              <label for="customerNumber">Customer Number</label>
+              <input formControlName="customerNumber" class="form-control" type="number" id="customerNumber">
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <button class="btn btn primary" type="submit" [disabled]="!peopleForm.valid">Submit</button>
+          {{peopleForm.valid}}
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
