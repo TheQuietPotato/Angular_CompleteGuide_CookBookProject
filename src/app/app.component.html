@@ -1,9 +1,9 @@
-<app-header></app-header>
+<app-header (sToEmit)="setActiveComp($event)" ></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes></app-recipes>
-      <app-shopping-list></app-shopping-list>
+      <app-recipes *ngIf="shopListOrRecepies === 'recipes'"></app-recipes>
+      <app-shopping-list *ngIf="shopListOrRecepies === 'shopList'"></app-shopping-list>
     </div>
   </div>
 </div>
