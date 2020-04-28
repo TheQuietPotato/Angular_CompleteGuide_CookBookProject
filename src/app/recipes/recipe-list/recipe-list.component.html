@@ -8,7 +8,7 @@
         <div class="col-12">
             <hr>
             <div *ngFor="let each of recipes">
-                <app-recipe-item [recipeItem]="each" (itemSelected)="triggerItemSelect(each)"></app-recipe-item>
+                <app-recipe-item [recipeItem]="each"></app-recipe-item>
             </div>
         </div>
     </div>
