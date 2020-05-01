@@ -6,9 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  shopListOrRecepies = 'recipes';
-
-  setActiveComp(s: string) {
-    this.shopListOrRecepies = s;
-  }
+  
 }

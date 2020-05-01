@@ -1,4 +1,5 @@
-import { Directive, OnInit, ElementRef, Renderer2, HostListener, HostBinding, ViewChild, asNativeElements } from '@angular/core';
+import { Directive, OnInit, ElementRef, Renderer2, HostListener } from '@angular/core';
+
 
 
 @Directive({
