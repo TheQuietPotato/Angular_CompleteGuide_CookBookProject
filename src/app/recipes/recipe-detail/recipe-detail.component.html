@@ -11,11 +11,11 @@
 <div class="row">
     <div class="col-sm-12">
         <div appDropdown class="dropdown">
-            <button type="button" class="btn btn-primary dropdown-toggle">Manage Recipe <span class="caret"></span></button>
+            <button type="button" class="btn btn-primary dropdown-toggle my-2">Manage Recipe <span class="caret"></span></button>
              <div class="dropdown-menu">
                 <a class="dropdown-item" style="cursor: pointer;" (click)=sendingIngredientsToSL()>Add Shopping list</a>
                 <a class="dropdown-item" style="cursor: pointer;" [routerLink]="['../', id, 'edit']" >Edit Recipe</a>
-                <a class="dropdown-item" style="cursor: pointer;">Delete Recipe</a>
+                <a class="dropdown-item" style="cursor: pointer;" (click)="onDeleteRecipe()">Delete Recipe</a>
             </div>
         </div>
     </div>
@@ -31,6 +31,11 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
+        Description
+    </div>
+</div>
+<div class="row">
+    <div class="col-sm-12 list-group-item">
         {{selectedRecipe.description}}
     </div>
 </div>
