@@ -1,43 +1,27 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from '../app/header/header.component'
-import { RecipesComponent } from './recipes/recipes.component';
-import { RecipeListComponent } from './recipes/recipe-list/recipe-list.component';
-import { RecipeDetailComponent } from './recipes/recipe-detail/recipe-detail.component';
-import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-item.component';
-import { ShoppingListComponent } from './shopping-list/shopping-list.component';
-import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
-import { DropdownDirective } from './shared/dropdown.directive';
-import { ShoppingListService } from './shopping-list/shopping-list.service';
 import { AppRoutingModule } from './app.router';
-import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
-import { RecipesEditComponent } from './recipes/recipes-edit/recipes-edit.component';
-import { RecipeService } from './recipes/recipe.service';
+import { SharedModule } from './shared/shared.module';
+import { AuthModule } from './auth/auth.module';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DropdownDirective,
-    HeaderComponent,
-    RecipesComponent,
-    RecipeListComponent,
-    RecipeDetailComponent,
-    RecipeItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    RecipeStartComponent,
-    RecipesEditComponent
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule,
-    FormsModule,
-    AppRoutingModule
+    HttpClientModule,
+    CoreModule,
+    AppRoutingModule,
+    AuthModule,
+    ShoppingListModule,
+    SharedModule
   ],
-  providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
